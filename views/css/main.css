@@ -1,11 +1,6 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
-    Created on : 15-May-2018, 21:38:44
-    Author     : ichi
+    Updated on : 30-May-2018
+    Author     : Khadija
 */
 
 /* ichi added for soace around forms*/
@@ -25,24 +20,24 @@ html {
 }
 body, html {
     height: 100%;
-/*    margin: 0;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background: #70bg32;
-    background-repeat:no-repeat;
-    background:-webkit-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
-    background:-moz-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
-    background:-o-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
-    background:-ms-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
-    background: linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
-    background-attachment: fixed;*/
-    
+    /*    margin: 0;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background: #70bg32;
+        background-repeat:no-repeat;
+        background:-webkit-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
+        background:-moz-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
+        background:-o-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
+        background:-ms-linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
+        background: linear-gradient(top,#dfe5e8 25%,#becbd2 75%) ;
+        background-attachment: fixed;*/
+
     /*    background-image: url('../Images/background2.jpg');
         background-attachment: fixed;
         background-size:cover;*/
-   
+
 }
 
 .bg {
@@ -67,7 +62,7 @@ body, html {
     background-image: url('../images/woodBloog.jpg'); 
     background-attachment: fixed;
     background-size:cover;
- 
+
 }
 .bg4 {
     background: #303e45;
@@ -83,7 +78,7 @@ h1 {
     font-family: sans-serif;
     text-align: center;
     font-size: 50px;
-    color: #ddd;
+    color: #000;
     margin-top: 0px;    
 }
 
@@ -152,12 +147,12 @@ p {
 }
 
 ul, input {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+    /*    list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #f3f3f3;*/
 }
 
 li {
@@ -329,7 +324,7 @@ input[type=text], input[type=email], input[type=password]{
     background-color: #f5f7f8;
     padding: 20px;
     margin-top: 20px;
-    
+
 }
 
 /*rgba(255,255,255, 0.2)*/
@@ -394,9 +389,75 @@ input[type=text], input[type=email], input[type=password]{
     margin-bottom: 40px;
 }
 
-.sub-heading1 {
-    color: gainsboro;
+/*update profile css*/
+
+input.hidden {
+    position: absolute;
+    left: -9999px;
 }
+
+#profile-image1 {
+    cursor: pointer;
+
+    width: 100px;
+    height: 100px;
+    border:2px solid #03b1ce ;}
+.tital{ font-size:16px; font-weight:500;}
+.bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0}	
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+/*.sub-heading1 {
+    color: gainsboro;
+}*/
 
 .login {
     color: darkslategray;

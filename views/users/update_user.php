@@ -1,31 +1,56 @@
-<?php
-
-/* 
- * form to update profile
- *
- */
-
-?>
-<section style = "margin: 20px 100px 100px 100px">      
-<h1>Update Account</h1>
-<br>
-<!--<h2>Change where need to be</h2>-->
-<p>To change your password, enter and confirm your new password in the fields below.</p>
-<br>
-    <form  action="" method="post" >
-
-        <p>First name: <input type="text" name="first_name" value="<?= $user->first_name ?>" /></p>
-        <p>Last name: <input type="text" name="last_name" value="<?= $user->last_name ?>" /></p>
-        <p>Email: <input type="email" name="email" value="<?= $user->email ?>" /></p>          
-        <p>Password: <input type="password" name="password" id="password" ? /></p>
-        <p>Confirm password: <input type="password" name="password-repeat" id="confirm_password" /></p>  
-  
-     
-    <input type="submit" value = "Submit" href="?controller=user&action=update" />
-    <!--not sure if it works -->
-    <a type= "button" href="?controller=blog&action=viewAll">Cancel</a>
-    </form>
- </section>
+<div class="container">
+    <h1>Edit Profile</h1>
+      
+        <h2>Personal info</h2>
+        
+        <form action="?controller=user&action=update" method="POST" class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $user->first_name ?>" name="first_name"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $user->last_name ?>" name="last_name"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $user->email ?>" name="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="<?= $user->username ?>" name="username"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" id="password" type="password" name="password" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" id="confirm_password" type="password" name="confirm_password" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="submit" class="btn btn-primary" value = "Submit" />
+              <span></span>
+              <a  href="?controller=blog&action=viewAll">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+<hr>
 <script>
     var password = document.getElementById("password")
       , confirm_password = document.getElementById("confirm_password");
@@ -41,6 +66,4 @@
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
 </script>        
-
-
 

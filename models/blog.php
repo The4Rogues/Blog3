@@ -49,34 +49,29 @@ class Blog {
 
     public static function update($id) {
         $db = Db::getInstance();
-        $req = $db->prepare("Update blog set blog_title=:blog_title, blog_summary=:blog_summary, topic:=topic, style_id:=style_id where id=:id");
+        $req = $db->prepare("Update blog set blog_title=:blog_title, blog_summary=:blog_summary, topic=:topic, blog_image = :blog_image where id=:id");
         $req->bindParam(':id', $id);
         $req->bindParam(':blog_title', $blog_title);
         $req->bindParam(':blog_image', $blog_image);
         $req->bindParam(':blog_summary', $blog_summary);
         $req->bindParam(':topic', $topic);
-        $req->bindParam(':style_id', $style_id);
+        
 
         if (isset($_POST['blog_title']) && $_POST['blog_title'] != "") {
             $filteredBlog_title = filter_input(INPUT_POST, 'blog_title', FILTER_SANITIZE_SPECIAL_CHARS);
-        }
-        if (isset($_POST['blog_image']) && $_POST['blog_image'] != "") {
-                $filteredBlogImage = filter_input(INPUT_POST, 'blog_image', FILTER_SANITIZE_SPECIAL_CHARS);
-            }     
+        }  
         if (isset($_POST['blog_summary']) && $_POST['blog_summary'] != "") {
             $filteredBlog_summary = filter_input(INPUT_POST, 'blog_summary', FILTER_SANITIZE_SPECIAL_CHARS);
         }
         if (isset($_POST['topic']) && $_POST['topic'] != "") {
             $filteredTopic = filter_input(INPUT_POST, 'topic', FILTER_SANITIZE_SPECIAL_CHARS);
         }
-        if (isset($_POST['style_id']) && $_POST['style_id'] != "") {
-            $filteredStyle_id = filter_input(INPUT_POST, 'style_id', FILTER_SANITIZE_SPECIAL_CHARS);
-        }
+
         $blog_title = $filteredBlog_title;
-        $blog_image = $filteredBlogImage;
+        $blog_image = Blog::uploadFile();
         $blog_summary = $filteredBlog_summary;
         $topic = $filteredTopic;
-        $style_id = $filteredStyle_id;
+        
         $req->execute();
         return $id;
     }

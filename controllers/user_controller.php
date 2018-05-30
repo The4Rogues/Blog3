@@ -30,7 +30,7 @@ class UserController {
                 $_SESSION['username']=$user->username;
                 $_SESSION['admin_level']=$user->admin_level;
                 
-                return call('user', 'show');
+                return header('Location: index.php?controller=blog&action=viewAll');
             }
             catch (Exception $ex){
                 return call('pages','error');
@@ -136,6 +136,6 @@ class UserController {
     
     public function logout(){
         session_unset();
-        return call ('blog', 'viewAll');
+        return header('Location: index.php?controller=blog&action=viewAll');
     }
 }
