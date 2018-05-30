@@ -1,30 +1,76 @@
-<?php
 
-/* 
- * form to update profile
- *
- */
-
-?>
-<section style = "margin: 20px 100px 100px 100px">      
-<h1>Change on your Account</h1>
+<div class="container">
+    <h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        <h3>Personal info</h3>
         
-<h2>Change where need to be</h2>
-<p>You must add your current password or new password on the both password and confirm your password fields </P>        
-    <form  action="" method="post" >
+        <form action="?controller=user&action=update" method="POST" class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $user->first_name ?>"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $user->last_name ?>" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $user->email ?>" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="<?= $user->username ?>" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value = "Submit" />
+              <span></span>
+              <a  href="?controller=blog&action=viewAll">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+<hr>
 
-        <p>First name: <input type="text" name="first_name" value="<?= $user->first_name ?>" /></p>
-        <p>Last name: <input type="text" name="last_name" value="<?= $user->last_name ?>" /></p>
-        <p>Email: <input type="email" name="email" value="<?= $user->email ?>" /></p>          
-        <p>Password: <input type="password" name="password" id="password" ? /></p>
-        <p>Confirm your password: <input type="password" name="password-repeat" id="confirm_password" /></p>  
-  
-     
-    <input type="submit" value = "Submit" href="?controller=user&action=update" />
-    <!--not sure if it works -->
-    <a type= "button" href="?controller=blog&action=viewAll">Cancel</a>
-    </form>
- </section>
 <script>
     var password = document.getElementById("password")
       , confirm_password = document.getElementById("confirm_password");

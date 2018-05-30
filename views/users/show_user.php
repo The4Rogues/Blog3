@@ -38,22 +38,18 @@
               <!-- /input-group -->
             </div>
             <div class="col-sm-6">
-            <h4 style="color:#00b1b1;">Prasad Shankar Huddedar </h4></span>
+            <h4 style="color:#00b1b1;"><?= $user->first_name; ?> <?= $user->last_name; ?></h4></span>
               <span><p>Aspirant</p></span>            
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
     
               
-<div class="col-sm-5 col-xs-6 tital " >First Name:</div><div class="col-sm-7 col-xs-6 ">Prasad</div>
+<div class="col-sm-5 col-xs-6 tital " >First Name:</div><div class="col-sm-7 col-xs-6 "><?= $user->first_name; ?></div>
      <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Middle Name:</div><div class="col-sm-7"> Shankar</div>
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Last Name:</div><div class="col-sm-7"> Huddedar</div>
+<div class="col-sm-5 col-xs-6 tital " >Last Name:</div><div class="col-sm-7"><?= $user->last_name; ?></div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
@@ -62,22 +58,15 @@
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Date Of Birth:</div><div class="col-sm-7">11 Jun 1998</div>
+<div class="col-sm-5 col-xs-6 tital " >Username:</div><div class="col-sm-7"><?= $user->last_name; ?></div>
 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Place Of Birth:</div><div class="col-sm-7">Shirdi</div>
+<div class="col-sm-5 col-xs-6 tital " >email:</div><div class="col-sm-7"><?= $user->email; ?></div>
 
  <div class="clearfix"></div>
 <div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Nationality:</div><div class="col-sm-7">Indian</div>
-
- <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Relition:</div><div class="col-sm-7">Hindu</div>
 
 
             <!-- /.box-body -->
@@ -102,24 +91,7 @@
        
    </div>
 </div>
-
-
-<?php
-/* 
- * show the profile of user (controller may contribute or request specific tag)
- */
-
-?>
-
 <section>
-    <div>
-        <h2> Your profile </h2>
-        <p> First name:<?= $user->first_name; ?></p>
-        <p> Last name: <?= $user->last_name; ?></p>
-        <p> Your Username: <?= $user->username; ?></p>
-        <p> your email: <?= $user->email; ?></p>
-        
-    </div>
     <?php // update delete need id - codein php by controller ?>
     <a class ="button" href="?controller=user&action=update" >Update your profile</a>
     <a class ="button" href="?controller=user&action=delete" >Delete your profile</a>
