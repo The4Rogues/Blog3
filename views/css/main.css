@@ -83,7 +83,7 @@ h1 {
     font-family: sans-serif;
     text-align: center;
     font-size: 50px;
-    color: #ddd;
+    color: #000;
     margin-top: 0px;    
 }
 
@@ -460,9 +460,9 @@ input.hidden {
     margin-bottom: 0px;
 }
 
-.sub-heading1 {
+/*.sub-heading1 {
     color: gainsboro;
-}
+}*/
 
 .login {
     color: darkslategray;

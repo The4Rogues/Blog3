@@ -4,7 +4,7 @@
     <img src="<?= $blog->blog_image ?>" alt="" height="100" width="200">
     <div>
         <h1> <?= $blog->blog_title; ?></h1>
-        <p> Published <?= $blog->date_created; ?></p>
+        <p> Published <?= (new DateTime($blog->date_created))->format('d F Y') ?> </p>
         <br>
         <p> Summary: <?= html_entity_decode($blog->blog_summary); ?></p>
     </div>
