@@ -29,7 +29,8 @@ class Post
         
         $list = [];
         $db = Db::getInstance();
-        $req = $db->query("SELECT * FROM POSTS where blog_id = $search");
+        $req = $db->query("SELECT * FROM POSTS where blog_id = $search ORDER BY
+            created_at DESC");
         // we create a list of Product objects from the database results
         foreach ($req->fetchAll() as $post) {
            // $blog = Blog::find($post['blog_id']);
