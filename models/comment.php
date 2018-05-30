@@ -1,5 +1,7 @@
 <?php
 
+require_once('models/user.php');
+
 class Comment
 {
 
@@ -8,13 +10,15 @@ class Comment
     public $user_id;
     public $comment_body;
     public $created_at;
+    public $user;
 
-    public function __construct($id, $user_id, $comment_body, $created_at)
+    public function __construct($id, $user_id, $comment_body, $created_at, $user = null)
     {
         $this->id = $id;
         $this->user_id = $user_id;
         $this->comment_body = $comment_body;
         $this->created_at = $created_at;
+        $this->user = $user;
     }
 
     public static function all($post_id)
@@ -26,7 +30,8 @@ class Comment
         $req = $db->query("SELECT * FROM COMMENTS where post_id = $search");
         // we create a list of Product objects from the database results
         foreach ($req->fetchAll() as $comment) {
-            $list[] = new Comment($comment['id'], $comment['user_id'], $comment['comment_body'], $comment['created_at']);
+            $user = User::find($comment['user_id']);
+            $list[] = new Comment($comment['id'], $comment['user_id'], $comment['comment_body'], $comment['created_at'], $user);
         }
         return $list;
     }

@@ -26,22 +26,15 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <!-- Blog entry -->
                 <?php foreach ($blogs as $blog) { ?> 
                     <div class="col-md-4 col-sm-6 card-col">
-                        <div class="card thumbnail">
-                            <img src="<?= $blog->blog_image ?>" alt="Game of Thrones" style="width:100%">
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="?controller=blog&action=show&blog_id=<?= $blog->id; ?>"><img src="<?= $blog->blog_image ?>" alt="Game of Thrones" style="width:100%"></a>
+                            </div>
+                            
                             <div class="card-body">
                                 <h5 class="card-title"><?= $blog->blog_title ?></h5>
                                 <h5><span class="w3-opacity"><?= (new DateTime($blog->date_created))->format('d F Y') ?> </span></h5>
-                                <p class="card-text blog-summary"><?= html_entity_decode($blog->blog_summary) ?></p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <button onclick="window.location = '?controller=blog&action=show&blog_id=<?= $blog->id; ?>'" class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black readmore"><b>READ MORE »</b></button>
-                                    </div>  
-                                    <div class="col-md-6">
-                                        <p><b>Comments</b><br><span class="w3-tag">0</span></p>
-                                    </div> 
-                                </div>
+                                <div class="card-text blog-summary"><?= strip_tags(html_entity_decode($blog->blog_summary)) ?></div>
                             </div>
                         </div>
                         <hr>

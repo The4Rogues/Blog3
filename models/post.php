@@ -114,10 +114,6 @@ class Post
         $postTitle = $filteredPostTitle;
         $postBody = $filteredPostBody;
         $req->execute();
-        //upload product image if it exists
-        if (!empty($_FILES[self::InputKey]['myUpload'])) {
-            Image::encodeImage();
-        }
     }
 
     const AllowedTypes = ['image/jpeg', 'image/jpg'];
