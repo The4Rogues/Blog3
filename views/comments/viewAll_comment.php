@@ -13,7 +13,7 @@
                     <?php 
                         // if it is logged in users comment show "delete button"
                         if (isset($_SESSION['user_id'])){
-                            if($_SESSION['user_id']==$comment->user_id){  ?>
+                        if(($_SESSION['user_id']==$comment->user_id)||($_SESSION['admin_level']=='1')){  ?>
                             <a href='?controller=comment&action=delete&comment_id=<?= $comment->id; ?>'>Delete Comment</a> &nbsp; &nbsp;
                     <?php   } 
                         }
