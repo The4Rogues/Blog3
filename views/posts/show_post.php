@@ -24,7 +24,7 @@
      
             
          <p><?php echo $post->post_title ;?></p>
-        
+         <br>
          <!--
          image will be here by controller 
          <img src="smiley.gif" alt="Smiley face" width="200" height="100">
@@ -38,8 +38,8 @@
         </p>
      </div>
           <div>
-         
-          <p><?php echo 'Date created:' . $post->created_at;?></p>
+          
+          <p><?php echo 'Published: ' . $post->created_at;?></p>
           
           
           <?php   //Only show date updated if post has been updated
@@ -47,9 +47,9 @@
   
           if ($date > 00000000 ){   ?> 
               
-                <p><?php echo 'Date last updated:' . $post->updated_at ;?></p>
+                <p><?php echo 'Last update: ' . $post->updated_at ;?></p>
                 
           <?php   } ;?>
-          <a href='?controller=blog&action=show&blog_id=<?php echo $post->blog_id; ?>'>Back to the Blog Page</a>
+          <a href='?controller=blog&action=show&blog_id=<?php echo $post->blog_id; ?>'>Back to blog</a>
      </div>     
  </section>

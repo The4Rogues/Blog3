@@ -8,18 +8,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css" />
 <div class="bg4">
     <h1>Create Blog</h1>
-    <p>Create a tag that we will use as the editable area.</p>
+    <p class = "sub-heading1">Capture your audience with your title and summary!</p>
     <!--You can use a div tag as well.-->
     <form action="index.php?controller=blog&action=create" method="POST" enctype="multipart/form-data">
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <input style="height:100px; font-size: 2em;" class="form-control" type="text" name="blog_title" placeholder="Blog title"/>
+                <input style="height:100px; font-size: 2em;" class="form-control" type="text" name="blog_title" placeholder="Blog title" required/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <input class="form-control" type="text" name="topic" required placeholder="Blog topic"/>
+                <input class="form-control" type="text" name="topic" required placeholder="Blog topic" required/>
             </div>
         </div>
         <div class="row">
@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1" style="margin-top:10px;">
-                <textarea id="edit" name="blog_summary"></textarea>
+                <textarea id="edit" name="blog_summary" ></textarea>
             </div>
         </div>
 

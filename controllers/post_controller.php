@@ -13,8 +13,14 @@ class PostController {
     }
 
     public function show() {
-        // we expect a url of form ?controller=post&action=show&id=x
-        // without an id we just redirect to the error page as we need the post id to find it in the database
+        //If not in URL, then post_id should be passed in SESSION. Clear post_id from SESSION once it's been accessed.
+        if (!isset($_GET['post_id'])){
+            If (isset($_SESSION['post_id'])){
+                $_GET['post_id'] = $_SESSION['post_id'];
+                $_SESSION['post_id'] = NULL;
+            }  
+        }
+   
         if (!isset($_GET['post_id']))
             return call('pages', 'error');
         try {
@@ -83,12 +89,6 @@ class PostController {
             Post::update($id);
             //call('blog', 'show'); potencially 
             call('blog', 'viewAll'); 
-
-  
-  //require_once('views/blogs/viewAll_blog.php');
-    //require_once('views/layout.php');
-            //$post = Post::all($_GET['blog_id']);
-            //require_once('views/posts/viewAll_post.php');
         }
     }
     /*

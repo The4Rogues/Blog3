@@ -13,6 +13,7 @@ session_start();
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="views/css/main.css">
 
@@ -26,7 +27,7 @@ session_start();
                     <div class="modal-content">
                         <div class="modal-header">
                             <a class="close" data-dismiss="modal">×</a>
-                            <h3>Login to Your Account</h3>
+                            <h3 class="login">Login to Your Account</h3>
                         </div>
                         <div class="modal-body">
                             <input type="text" name="username" placeholder="Username">
@@ -85,6 +86,7 @@ session_start();
             </div>
         </nav>
 
+
         <div>
             <?php
             require_once('connection.php');
@@ -121,7 +123,9 @@ session_start();
 
         <!-- Include Editor JS files. -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.1/js/froala_editor.pkgd.min.js"></script>
+        
         <script>
+            // mogin modal 
             $(document).ready(function () {
                 var fields = ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough',
                     'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color',
@@ -153,8 +157,28 @@ session_start();
                     return false;
                 });
             });
-        </script>
+            </script>
+    <script type="text/javascript">
+     // nav bar
+    $(document).ready(function (){
+        var loggedIn='';
+        loggedIn = '<?php if (isset($_SESSION['username'])){echo $_SESSION['username'];} ?>';
+        //if logged in
+        if (loggedIn){
 
+        $("#username-box").html(loggedIn);
+        $("#login-nav").hide();
+        $("#register-nav").hide();
+        }
+        // if not logged in
+        else if (loggedIn==''){
+
+        $("#logout-nav").hide();
+        $("#username-nav").hide();
+        }
+    });
+         
+        </script>
     </body>
 
 </html>

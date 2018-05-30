@@ -16,7 +16,7 @@
                         <h1 class="panel-title">Create Account for BlogAreUS </h1>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="index.php?controller=user&action=register">
+                        <form role="form" action="" method="post">
                             <div class="row">
                                 <div class="col-md-1"></div>
 
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                        <input type="password" name="password_confirmation" id="confirm_password" class="form-control input-sm" placeholder="Confirm Password">
                                     </div>
                                 </div>
                                 <div class="col-md-1"></div>
@@ -68,7 +68,7 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
-                                    <input type="submit" value="Submit" class="btn btn-info btn-block" >
+                                    <input type="submit" value="Submit" href="?controller=user&action=register"class="btn btn-info btn-block" >
                                 </div>
                                 <div class="col-md-1"></div>
                             </div>
@@ -88,17 +88,15 @@
     </div>
 </div>
 <script>
-    var password = document.getElementById("password")
-            , password_confirmation = document.getElementById("password_confirmation");
-
-    function validatePassword() {
-        if (password.value !== password_confirmation.value) {
-            password_confirmation.setCustomValidity("Passwords Don't Match");
-        } else {
-            password_confirmation.setCustomValidity('');
-        }
+ var password = document.getElementById("password")
+      , confirm_password = document.getElementById("confirm_password");
+    function validatePassword(){
+      if(password.value !== confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
     }
-
     password.onchange = validatePassword;
-    password_confirmation.onkeyup = validatePassword;
+    confirm_password.onkeyup = validatePassword;
 </script>   

@@ -14,13 +14,12 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
 
 <h1>Create Post</h1>
- Create a tag that we will use as the editable area.
-         You can use a div tag as well. 
+Document a sub-topic with a new post! 
 <form action="index.php?controller=post&action=create" method="POST">
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <input style="height:100px; font-size: 2em;" class="form-control" type="text" name="post_title"/>
+                <input style="height:100px; font-size: 2em;" class="form-control" type="text" name="post_title" placeholder="Enter title"/>
             </div>
         </div>
         <div class="row">

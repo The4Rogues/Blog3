@@ -85,7 +85,7 @@ class Comment
         $db = Db::getInstance();
         //make sure $id is an integer
         $id = intval($id);
-        $req = $db->prepare('delete FROM COMMENT WHERE id = :id');
+        $req = $db->prepare('delete FROM COMMENTS WHERE id = :id');
         // the query was prepared, now replace :id with the actual $id value
         $req->execute(array('id' => $id));
     }

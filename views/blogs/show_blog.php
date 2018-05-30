@@ -1,12 +1,14 @@
 
 <section>
-    <h1> Viewing a Blog (test)</h1>
+    <!--<h1> Viewing a Blog (test)</h1>-->
     <img src="<?= $blog->blog_image ?>" alt="" height="100" width="200">
     <div>
-        <p> Title: <?= $blog->blog_title; ?></p>
-        <p> Date: <?= $blog->date_created; ?></p>
-        <p>Summary: <?= html_entity_decode($blog->blog_summary); ?></p>
+        <h1> <?= $blog->blog_title; ?></h1>
+        <p> Published <?= $blog->date_created; ?></p>
+        <br>
+        <p> Summary: <?= html_entity_decode($blog->blog_summary); ?></p>
     </div>
+    <br>
     <div>
          <?php if (!empty($_SESSION) ) { if ($_SESSION['user_id']==$blog->user_id) {?>
         <a href="?controller=post&action=create&blog_id=<?= $blog->id ?>" class="button js-button" role="button">Create Post</a>
@@ -15,3 +17,4 @@
          <?php }} ?>
     </div>
 </section>
+<br>
