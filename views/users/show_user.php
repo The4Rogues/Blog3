@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row">
             <div class="panel panel-default" style="margin-top:50px;">
@@ -16,13 +15,11 @@
                             <div class="col-sm-5 col-xs-6 tital " >Last Name:</div><div class="col-sm-7"><?= $user->last_name; ?></div>
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
-
-                            <div class="col-sm-5 col-xs-6 tital " >Date Of Joining:</div><div class="col-sm-7">15 Jun 2016</div>
-
+                           
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
 
-                            <div class="col-sm-5 col-xs-6 tital " >Username:</div><div class="col-sm-7"><?= $user->last_name; ?></div>
+                            <div class="col-sm-5 col-xs-6 tital " >Username:</div><div class="col-sm-7"><?= $user->username; ?></div>
 
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>

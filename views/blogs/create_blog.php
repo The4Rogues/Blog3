@@ -14,22 +14,22 @@
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <input style="height:100px; font-size: 2em;" class="form-control" type="text" name="blog_title" placeholder="Blog title" required/>
+                <input style="height:100px; font-size: 2em;" class="form-control" type="text" name="blog_title" placeholder="Blog title"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <input class="form-control" type="text" name="topic" required placeholder="Blog topic" required/>
+                <input class="form-control" type="text" name="topic" required placeholder="Blog topic"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <input type="file" name="blog_image" id="blog_image">
+                <input type="file" name="blog_image" id="blog_image" required="">
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1" style="margin-top:10px;">
-                <textarea id="edit" name="blog_summary" ></textarea>
+                <textarea id="edit" name="blog_summary"></textarea>
             </div>
         </div>
 

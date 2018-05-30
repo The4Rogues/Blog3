@@ -1,7 +1,5 @@
-
 <div class="container">
     <h1>Edit Profile</h1>
-  	<hr>
       
         <h2>Personal info</h2>
         
@@ -9,43 +7,43 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $user->first_name ?>"/>
+              <input class="form-control" type="text" value="<?= $user->first_name ?>" name="first_name"/>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $user->last_name ?>" />
+              <input class="form-control" type="text" value="<?= $user->last_name ?>" name="last_name"/>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $user->email ?>" />
+              <input class="form-control" type="text" value="<?= $user->email ?>" name="email" />
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="<?= $user->username ?>" />
+              <input class="form-control" type="text" value="<?= $user->username ?>" name="username"/>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="" />
+              <input class="form-control" id="password" type="password" name="password" />
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirm password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="" />
+              <input class="form-control" id="confirm_password" type="password" name="confirm_password" />
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value = "Submit" />
+              <input type="submit" class="btn btn-primary" value = "Submit" />
               <span></span>
               <a  href="?controller=blog&action=viewAll">Cancel</a>
             </div>
@@ -68,6 +66,4 @@
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
 </script>        
-
-
 

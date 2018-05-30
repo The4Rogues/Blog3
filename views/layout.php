@@ -16,6 +16,15 @@ session_start();
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="views/css/main.css">
+        <!-- 
+        [if lt IE 9]
+
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+        [endif]
+        -->
 
         <title>Blog</title>
     </head>
@@ -51,9 +60,6 @@ session_start();
                     <?php if (!empty($_SESSION['user_id'])) {?>
                     <li><a href="?controller=blog&action=create">Create Blog</a></li>
                     <?php } ?>
-<!--                    <li class="active"><a href="index.php">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>-->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                                         
@@ -62,7 +68,7 @@ session_start();
                         <a href="#" data-toggle="modal" data-target=".modal"><span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                     <li>
-                        <a href="?controller=user&action=register"><span class="glyphicon glyphicon-user"></span> Create Account</a>
+                        <a href="?controller=user&action=register"><span class="glyphicon glyphicon-user"></span>Create Account</a>
                     </li>
                 <?php } else { ?> 
                     <li class="dropdown">
