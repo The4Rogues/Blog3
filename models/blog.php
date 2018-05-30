@@ -27,7 +27,8 @@ class Blog {
     public static function all() {
         $list = [];
         $db = Db::getInstance();
-        $req = $db->query('SELECT * FROM BLOGS');
+        $req = $db->query('SELECT * FROM BLOGS ORDER BY
+                            date_created DESC');
         foreach ($req->fetchAll() as $blog) {
             $list[] = new Blog($blog['id'], $blog['user_id'], $blog['blog_title'], $blog['topic'], $blog['blog_summary'], $blog['date_created'], $blog['date_edited'], $blog['style_id'], $blog['blog_image']);
         }
