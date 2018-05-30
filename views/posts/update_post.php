@@ -9,7 +9,7 @@
     <h1>Update Post</h1>
     <p>Create a tag that we will use as the editable area.</p>
     <!--You can use a div tag as well.-->
-    <form action="?controller=blog&action=update" method="POST" enctype="multipart/form-data">
+    <form action="?controller=post&action=update" method="POST" enctype="multipart/form-data">
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
