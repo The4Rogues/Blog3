@@ -23,9 +23,10 @@ Document a sub-topic with a new post!
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+          <!--  <div class="col-md-10 col-md-offset-1">
                 <input type="file" name="blog_image" id="blog_image" >
             </div>
+          -->
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1" style="margin-top:10px;">

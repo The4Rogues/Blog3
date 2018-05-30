@@ -24,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <input type="file" name="blog_image" id="blog_image">
+                <input type="file" name="blog_image" id="blog_image" required="">
             </div>
         </div>
         <div class="row">
