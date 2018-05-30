@@ -13,6 +13,7 @@ session_start();
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="views/css/main.css">
 
@@ -41,33 +42,25 @@ session_start();
         </div>
 
         <div>
-            <ul>
-                <li style="float:left">
-                    <a class="active" href="?controller=blog&action=viewAll">Home</a>
-                </li>
-                <li style="float:left">
-                    <a href="?controller=blog&action=create">Create Blog</a>
-                </li>
+    <ul>
+        <?php
+        if ( !isset($_SESSION) ) {
+            session_start();
+}
+        ?>
+        <li style="float:left"><a class="active" href="?controller=blog&action=viewAll">Home</a></li>  
+        <li style="float:left"><a href="?controller=blog&action=create">Create Blog</a></li> 
+                
 
+        <li id="login-nav"><a href="?controller=user&action=login">Login</a></li>
+        <li id="register-nav"><a href="?controller=user&action=register">Create Account</a></li>
+        
+                      
+        <li id="logout-nav"><a href="?controller=user&action=logout">Sign Out</a></li>       
+        <li id="username-nav"><a id="username-box"  href='?controller=user&action=show'>user</a></li>
+     
 
-                <?php if (empty($_SESSION['user_id'])) { ?>
-                    <li>
-                        <a href="#" data-toggle="modal" data-target=".modal">Login</a>
-                    </li>
-                    <li>
-                        <a href="?controller=user&action=register">Create Account</a>
-                    </li>
-                <?php } else { ?>
-                    <li>
-                        <a href="?controller=user&action=logout">Sign Out</a>
-                    </li>
-                    <li>
-                        <a href='?controller=user&action=show'>
-                            <?= $_SESSION['username']; ?>
-                        </a>
-                    </li>
-                <?php } ?>
-            </ul>
+    </ul>
 
             <?php
             require_once('connection.php');
@@ -104,7 +97,9 @@ session_start();
 
         <!-- Include Editor JS files. -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.1/js/froala_editor.pkgd.min.js"></script>
+        
         <script>
+            // mogin modal 
             $(document).ready(function () {
                 var fields = ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough',
                     'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color',
@@ -135,8 +130,28 @@ session_start();
                         return false;
                     });
             });
-        </script>
+            </script>
+    <script type="text/javascript">
+     // nav bar
+    $(document).ready(function (){
+        var loggedIn='';
+        loggedIn = '<?php if (isset($_SESSION['username'])){echo $_SESSION['username'];} ?>';
+        //if logged in
+        if (loggedIn){
 
+        $("#username-box").html(loggedIn);
+        $("#login-nav").hide();
+        $("#register-nav").hide();
+        }
+        // if not logged in
+        else if (loggedIn==''){
+
+        $("#logout-nav").hide();
+        $("#username-nav").hide();
+        }
+    });
+         
+        </script>
     </body>
 
     </html>
