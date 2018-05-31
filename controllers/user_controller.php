@@ -30,8 +30,10 @@ class UserController {
                 $_SESSION['username']=$user->username;
                 $_SESSION['admin_level']=$user->admin_level;
                 
-                return header('Location: index.php?controller=blog&action=viewAll');
-            }
+                echo '<script type="text/javascript">';
+                echo "window.location.href = 'index.php?controller=blog&method=viewAll';";
+                echo '</script>';
+                exit;            }
             catch (Exception $ex){
                 return call('pages','error');
             }
@@ -143,5 +145,6 @@ class UserController {
         echo '<script type="text/javascript">';
         echo "window.location.href = 'index.php?controller=blog&method=viewAll';";
         echo '</script>';
+        exit;
     }
 }
