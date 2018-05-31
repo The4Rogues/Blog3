@@ -71,7 +71,7 @@ class BlogController {
         }
         else{
             // if not logged in then re-direct to register page (also has link to log in)
-            return call('user', 'login');
+            return call('blog', 'viewAll');
         }  
     }
     

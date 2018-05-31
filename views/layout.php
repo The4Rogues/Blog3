@@ -60,7 +60,6 @@ session_start();
                     <?php if (!empty($_SESSION['user_id'])) {?>
                     <li><a href="?controller=blog&action=create">Create Blog</a></li>
                     <?php } ?>
-
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                                         

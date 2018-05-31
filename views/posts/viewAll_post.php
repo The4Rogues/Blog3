@@ -1,31 +1,19 @@
-<?php
-/* 
- * (controller may contribute or request specific tag)
- * all list of post
- */
-?>
- <section>
-
-         <!--
-         image will be here by controller 
-         <img src="smiley.gif" alt="Smiley face" width="200" height="100">
-         -->
-        <p>All posts:</p>
+<h2>All posts:</h2>
 
 <?php foreach($posts as $post) { ?>
-        
-  <p>
-  <p><?php //echo  $post->blog->blog_title.' '.$post->post_title ;
-  echo  $post->post_title ;
-  ?>
-    <?php //printf("%s - %s", $post->blog->blog_title, $post->post_title); ?> &nbsp; &nbsp;    
-    <a href='?controller=post&action=show&post_id=<?php echo $post->id; ?>'>See post</a> &nbsp; &nbsp;
-    <?php if (isset($_SESSION['user_id']) ) { if ($_SESSION['user_id']==$post->blog->user_id) {?>
-    <a href='?controller=post&action=update&post_id=<?php echo $post->id; ?>'>Update Post</a> &nbsp;
-     <?php } if (($_SESSION['user_id']==$post->blog->user_id)||($_SESSION['admin_level']=='1')) {?>
-    <a href='?controller=post&action=delete&post_id=<?php echo $post->id; ?>'>Delete Post</a> &nbsp; &nbsp;
-    <?php }} ?>
-  </p>
+<div class="col-sm-6 col-sm-offset-3">
+  <div class="panel panel-white post panel-shadow">
+    <div class="post-heading">
+      <div class="title h3">
+        <a href='?controller=post&action=show&post_id=<?php echo $post->id; ?>'>
+            <?=$post->post_title?>
+        </a>
+      </div>
+      <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id']==$post->blog->user_id) {?>
+      <a class="btn btn-danger" href='?controller=post&action=delete&post_id=<?php echo $post->id; ?>'>Delete Post</a> &nbsp; &nbsp;
+      <a class="btn btn-info" href='?controller=post&action=update&post_id=<?php echo $post->id; ?>'>Update Post</a> &nbsp;
+      <?php } ?>
+    </div>
+  </div>
+</div>
 <?php } ?>
-
- </section>
