@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
         <div class="card thumbnail">
-            <div class="card-body">
+            <div class="card-body" color="lightblue">
                 <h3 class="card-title">
                     <?= $post->post_title ?>
                 </h3>

@@ -20,6 +20,7 @@ html {
 }
 body, html {
     height: 100%;
+    background-color: lightblue;
     /*    margin: 0;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -65,7 +66,7 @@ body, html {
 
 }
 .bg4 {
-    background: #303e45;
+    background: lightblue;
     background-size: cover;
     min-height: calc(95vh - 13px) !important;
 }
@@ -78,15 +79,14 @@ h1 {
     font-family: sans-serif;
     text-align: center;
     font-size: 50px;
-    color: #000;
+    color: black;
     margin-top: 0px;    
 }
 
-/*
+
 h3 {
-    color: gainsboro;
+    color: black;
 }
-*/
 
 
 img.a {
@@ -172,7 +172,7 @@ li a:hover:not(.active), input:hover:not(.active) {
 }
 
 .active {
-    background-color: lightskyblue;
+    background-color: lightgoldenrodyellow;
 }
 
 div.preview {
@@ -325,8 +325,8 @@ input[type=text], input[type=email], input[type=password]{
     display: block;
     /* padding: 4px; */
     margin-bottom: 20px;
-    line-height: 1.428571429;
-    background-color: #fff;
+    line-height: 1.4562;
+    /*background-color: white;                               
     /* border: 1px solid #ddd; */
     border-radius: 4px;
     -webkit-transition: all .2s ease-in-out;
