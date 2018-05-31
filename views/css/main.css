@@ -156,7 +156,7 @@ ul, input {
 }
 
 li {
-    float: right;
+    /* float: right; */
 }
 
 li a, input {

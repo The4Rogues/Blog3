@@ -136,6 +136,12 @@ class UserController {
     
     public function logout(){
         session_unset();
-        return header('Location: index.php?controller=blog&action=viewAll');
+
+        // Because by the time we reach here, the layout.php will have already echo'd
+        // the username because at the point, the session existed
+        // We have to use Javascript here to do the redirect
+        echo '<script type="text/javascript">';
+        echo "window.location.href = 'index.php?controller=blog&method=viewAll';";
+        echo '</script>';
     }
 }
