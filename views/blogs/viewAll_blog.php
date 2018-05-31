@@ -28,7 +28,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <div class="col-md-4 col-sm-6 card-col">
                         <div class="card">
                             <div class="card-header">
-                                <a href="?controller=blog&action=show&blog_id=<?= $blog->id; ?>"><img src="<?= $blog->blog_image ?>" alt="Game of Thrones" style="width:100%"></a>
+                                <a href="?controller=blog&action=show&blog_id=<?= $blog->id; ?>"><img src="<?= $blog->blog_image ?>" alt="<?= $blog->blog_title ?>" style="width:100%"></a>
                             </div>
                             
                             <div class="card-body">
