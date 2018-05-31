@@ -50,7 +50,7 @@ class Blog {
 
     public static function update($id) {
         $db = Db::getInstance();
-        $req = $db->prepare("Update blog set blog_title=:blog_title, blog_summary=:blog_summary, topic=:topic, blog_image = :blog_image where id=:id");
+        $req = $db->prepare("Update BLOGS set blog_title=:blog_title, blog_summary=:blog_summary, topic=:topic, blog_image = :blog_image where id=:id");
         $req->bindParam(':id', $id);
         $req->bindParam(':blog_title', $blog_title);
         $req->bindParam(':blog_image', $blog_image);
@@ -70,9 +70,10 @@ class Blog {
 
         $blog_title = $filteredBlog_title;
         $blog_image = Blog::uploadFile();
+        
+        
         $blog_summary = $filteredBlog_summary;
         $topic = $filteredTopic;
-        
         $req->execute();
         return $id;
     }
@@ -143,7 +144,7 @@ class Blog {
         return $last_id;
     }
     
-        const AllowedTypes = ['image/jpeg', 'image/jpg'];
+    const AllowedTypes = ['image/jpeg', 'image/jpg'];
     const InputKey = 'blog_image';
 
     //die() function calls replaced with trigger_error() calls
@@ -154,7 +155,7 @@ class Blog {
             trigger_error("File Missing!");
         }
         if ($_FILES[self::InputKey]['error'] > 0) {
-            trigger_error("Handle the error! " . $_FILES[InputKey]['error']);
+            trigger_error("Handle the error! " . $_FILES[self::InputKey]['error']);
         }
         if (!in_array($_FILES[self::InputKey]['type'], self::AllowedTypes)) {
             trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey]['type']);
@@ -166,9 +167,11 @@ class Blog {
         $imdata = sprintf("data:%s;base64,%s",
             $_FILES[self::InputKey]['type'],
             base64_encode($im)
-        );              
+        );        
+
         //Clean up the temp file
         if (file_exists($tempFile)) {
+
             unlink($tempFile);
         }       
         return $imdata;

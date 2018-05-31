@@ -10,7 +10,7 @@
     <p>Create a tag that we will use as the editable area.</p>
     <!--You can use a div tag as well.-->
     <form action="?controller=blog&action=update" method="POST" enctype="multipart/form-data">
-
+        <input type="hidden" name="blog_id" value="<?= $_GET['blog_id'] ?>">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <input value="<?= $blog->blog_title ?>" style="height:100px; font-size: 2em;" class="form-control" type="text" name="blog_title" placeholder="Blog title"/>

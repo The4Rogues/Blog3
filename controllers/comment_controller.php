@@ -13,9 +13,9 @@ class CommentController {
       require_once('views/comments/viewAll_comment.php');
       }
       else {     
-            Comment::add();
+            // Comment::add();
 
-            header('Location: index.php?controller=post&action=show&post_id=' . $_GET['post_id']);
+            // header('Location: index.php?controller=post&action=show&post_id=' . $_GET['post_id']);
       }
     }
 
@@ -45,8 +45,11 @@ class CommentController {
       }
       else { 
           
-            Comment::add();     
-            call('post', 'show');
+            Comment::add(); 
+            echo '<script type="text/javascript">';
+            echo "window.location.href = 'index.php?controller=post&action=show&post_id={$_GET['post_id']}';";
+            echo '</script>';
+            exit; 
       }
       
     }

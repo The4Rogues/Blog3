@@ -14,7 +14,7 @@
 
 <h1>Oops, there seems to be an error!</h1>
 
-<img class="a" src="../images/error_image.png" width="250" height="250" alt="Error Image" />
+<img class="a" src="../Images/error_image.png" width="250" height="250" alt="Error Image" />
 
 <p>Sorry, this page is temporarily unavailable. </br> Please try again later.</p>
 

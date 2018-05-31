@@ -96,10 +96,14 @@ class BlogController {
             }
         }
         else{ 
-            $id = $_GET['blog_id'];
+            $id = $_POST['blog_id'];
             $blog = Blog::update($id);
-                        
-            return call('blog', 'show');
+
+            echo '<script type="text/javascript">';
+            echo "window.location.href = 'index.php?controller=blog&action=show&blog_id={$id}';";
+            echo '</script>';
+            exit;          
+            
         } 
     }
     

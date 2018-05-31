@@ -51,7 +51,7 @@
             if (!empty($_SESSION['username'])){ ?>
         <div>
             <h3>Add comment here!</h3>
-            <form action="?controller=comment&action=viewAll&post_id=<?= $_GET['post_id'] ?>" method="POST">
+            <form action="?controller=comment&action=create&post_id=<?= $_GET['post_id'] ?>" method="POST">
 
                 <textarea class="comment_body" name="comment_body" rows="5" cols="60" placeholder="Write your comment here"></textarea>
                 <!-- need to check this href with controller probably if post then process of add-->
