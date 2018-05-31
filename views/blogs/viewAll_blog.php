@@ -37,7 +37,6 @@ and is wrapped around the whole page content, except for the footer in this exam
                                 <div class="card-text blog-summary"><?= strip_tags(html_entity_decode($blog->blog_summary)) ?></div>
                             </div>
                         </div>
-                        <hr>
 
                     </div>
                 <?php } ?>
